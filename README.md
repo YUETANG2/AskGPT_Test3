@@ -17,7 +17,7 @@
   - Chrome Extension API
   - React
   - TailwindCSS
-
+z
 # Installation
 - Clone repo to your machine
 - `npm i`
