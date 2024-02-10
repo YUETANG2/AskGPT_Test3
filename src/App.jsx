@@ -66,7 +66,7 @@ function App() {
           value={input}
           onChange={handleInputChange}
         />
-        <button className="text-lg" onClick={askGPT}>Ask GPT!</button>
+        <button className="text-lg text-center" onClick={askGPT}>Ask GPT!</button>
       </div>
     </div>
   );
