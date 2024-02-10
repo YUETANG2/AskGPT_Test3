@@ -9,14 +9,15 @@
           }, delay);
         };
       };
-      
-      
+
       let selection = "" //<- highlighted text
 
       document.addEventListener("selectionchange", debounce( async (event) => {
         //saved highlighted text from the broswer to selection
         selection = document.getSelection ? document.getSelection().toString() : document.selection.createRange().toString();
-
+        if (selection.length > 0) {
+          chrome.runtime.sendMessage({text: selection});
+        }
         //check: print hightlighted text onto the broswer's console
         console.log(selection)
       }, 250));
@@ -32,7 +33,7 @@
                 });
 
                 //output response
-                console.log(response);
+                 console.log(response);
             }catch(err){
                 console.log(err);
             }
