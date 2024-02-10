@@ -8,7 +8,7 @@ function App() {
           recusandae quis ab. Dolorem blanditiis inventore vitae veritatis cum
           maxime ad alias assumenda autem, tempora, modi corporis, sunt
           voluptatem enim in!`;
-          
+
   const [conversation, setConversation] = useState([
     placeholderMsg,
     placeholderMsg,
@@ -18,10 +18,8 @@ function App() {
 
   useEffect(() => {
     const handleMessage = (message, sender, sendResponse) => {
-      if (message.text) {
-        console.log("Received text from content script:", message.text);
-        setInput(message.text);
-      }
+      console.log("Received text from content script:", message.text);
+      setInput(message.text);
     };
 
     chrome.runtime.onMessage.addListener(handleMessage);
@@ -31,11 +29,11 @@ function App() {
   }, []);
 
   const askGPT = async () => {
-    setConversation([...conversation, { input }]);
+    setConversation(() => [...conversation, input]);
     setInput("");
     const response = await run(input);
     console.log(response);
-    setConversation([...conversation, { response }]);
+    setConversation(() => [...conversation, input, response]);
   };
 
   const handleInputChange = (event) => {
