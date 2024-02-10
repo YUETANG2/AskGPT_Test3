@@ -3,7 +3,18 @@ import run from "./api/geminiAPI";
 
 function App() {
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
+
+  const placeholderMsg = `Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
+          recusandae quis ab. Dolorem blanditiis inventore vitae veritatis cum
+          maxime ad alias assumenda autem, tempora, modi corporis, sunt
+          voluptatem enim in!`;
+          
+  const [conversation, setConversation] = useState([
+    placeholderMsg,
+    placeholderMsg,
+    placeholderMsg,
+    placeholderMsg,
+  ]);
 
   useEffect(() => {
     const handleMessage = (message, sender, sendResponse) => {
@@ -20,9 +31,11 @@ function App() {
   }, []);
 
   const askGPT = async () => {
+    setConversation([...conversation, { input }]);
+    setInput("");
     const response = await run(input);
     console.log(response);
-    setOutput(response);
+    setConversation([...conversation, { response }]);
   };
 
   const handleInputChange = (event) => {
@@ -32,35 +45,19 @@ function App() {
   return (
     <div className="min-w-64 min-h-96 flex flex-col h-screen text-center justify-between">
       {/* Top */}
-      <h1 className="text-4xl font-bold bg-yellow-400 p-4">
-        Ask chatGPT
-      </h1>
+      <h1 className="text-4xl font-bold bg-yellow-400 p-4">Ask chatGPT</h1>
 
       <div className="flex flex-grow flex-col gap-4 p-4 overflow-auto">
-        <div className="w-3/4 text-left mx-auto mr-0 bg-green-200 p-4 rounded-[40px]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          recusandae quis ab. Dolorem blanditiis inventore vitae veritatis cum
-          maxime ad alias assumenda autem, tempora, modi corporis, sunt
-          voluptatem enim in!
-        </div>
-        <div className="w-3/4 text-left mx-auto ml-0 bg-red-200 p-4 rounded-[40px]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          recusandae quis ab. Dolorem blanditiis inventore vitae veritatis cum
-          maxime ad alias assumenda autem, tempora, modi corporis, sunt
-          voluptatem enim in!
-        </div>
-        <div className="w-3/4 text-left mx-auto mr-0 bg-green-200 p-4 rounded-[40px]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          recusandae quis ab. Dolorem blanditiis inventore vitae veritatis cum
-          maxime ad alias assumenda autem, tempora, modi corporis, sunt
-          voluptatem enim in!
-        </div>
-        <div className="w-3/4 text-left mx-auto ml-0 bg-red-200 p-4 rounded-[40px]">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia
-          recusandae quis ab. Dolorem blanditiis inventore vitae veritatis cum
-          maxime ad alias assumenda autem, tempora, modi corporis, sunt
-          voluptatem enim in!
-        </div>
+        {conversation.map((message, index) => (
+          <div
+            key={index}
+            className={`w-3/4 text-left mx-auto p-4 rounded-[40px] ${
+              index % 2 === 1 ? "bg-red-200 ml-0" : "bg-green-200 mr-0"
+            }`}
+          >
+            {message}
+          </div>
+        ))}
       </div>
 
       {/* Bottom */}
