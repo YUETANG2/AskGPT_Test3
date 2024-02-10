@@ -20,10 +20,10 @@
     }
   ],
   "side_panel": {
-    "default_path": "build/index.html"
+    "default_path": "./index.html"
   },
   "action": {
-    "default_popup": "../build/index.html",
+    "default_popup": "./index.html",
     "default_icon": "hello_extensions.png"
   }
 }
