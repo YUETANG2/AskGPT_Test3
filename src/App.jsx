@@ -43,7 +43,7 @@ function App() {
   return (
     <div className="min-w-64 min-h-96 flex flex-col h-screen text-center justify-between">
       {/* Top */}
-      <h1 className="text-4xl font-bold bg-yellow-400 p-4">Ask chatGPT</h1>
+      <h1 className="text-2xl font-bold bg-yellow-400 p-4">Ask chatGPT</h1>
 
       <div className="flex flex-grow flex-col gap-4 p-4 overflow-auto">
         {conversation.map((message, index) => (
@@ -66,7 +66,7 @@ function App() {
           value={input}
           onChange={handleInputChange}
         />
-        <button onClick={askGPT}>Ask GPT!</button>
+        <button className="text-lg" onClick={askGPT}>Ask GPT!</button>
       </div>
     </div>
   );
