@@ -23,6 +23,12 @@
   },
   "action": {
     "default_popup": "./index.html",
-    "default_icon": "hello_extensions.png"
+    "default_icon": "askGPT.png"
+  },
+  "icons": {
+    "16": "askGPT.png",
+    "32": "askGPT.png",
+    "48": "askGPT.png",
+    "128": "askGPT.png"
   }
 }
