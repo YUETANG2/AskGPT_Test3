@@ -1,3 +1,10 @@
+@google/generative-ai
+  "devDependencies": {
+    "autoprefixer": "^10.4.17",
+    "postcss": "^8.4.35",
+    "tailwindcss": "^3.4.1"
+  }
+  
 # ChatGPT chrome extension
 
 [PLACE_FOR_YOUR_IMAGE]
