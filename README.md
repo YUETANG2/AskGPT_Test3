@@ -1,30 +1,5 @@
-@google/generative-ai
-  "devDependencies": {
-    "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35",
-    "tailwindcss": "^3.4.1"
-  }
-  
-# ChatGPT chrome extension
+# Ask Genie
 
-[PLACE_FOR_YOUR_IMAGE]
-
-[PLACE_TO_ADD_LINK_FOR_DEPLOYED_VERSION]
-
-[Add some introduction about your project. What is the purpose of it? What problem does it solve? What it does?]
-
-**Example:**
-
-  {YOUR_PROJECT_NAME} is a web application to check the weather in any location in world! 
-  - Enter the name of the city you want to know the weather for. 
-  - Get the weather for your current location.
-  - Get the weather forecast for up to 4 weeks!
-
-# Technologies in use / Tech Stack / Built with
-  - Chrome Extension API
-  - React
-  - TailwindCSS
-z
 # Installation
 - Clone repo to your machine
 - `npm i`
@@ -35,26 +10,31 @@ z
 - Click on "Manage Extension"
 - Click on "Load Unpacked" and select the build folder
 
-# What I have learned
+## Inspiration
+Imagine a world where answers are just a click away, effortlessly woven into your browsing experience. Inspired by the frustration of constantly toggling between tasks, we crafted a game-changing Chrome extension chat box. No more disruptions, no more wasted time - just instant access to AI-powered insights, seamlessly integrated into your browser. Our innovation transforms the way users engage with information, providing unparalleled convenience with a simple highlight-and-inquire feature. Say goodbye to the hassle of navigating to external sources; say hello to a smarter, more efficient browsing experience. Our solution is not just a chatbox; it's a bridge to instant knowledge, always within reach, anytime, anywhere.
 
-[Tell more about what you have learned while building this project]
+## What it does
+What it does is allow users to open our AI-powered chat box (a side panel) through the context menu, as well as instantly prompt web content into the chat box through the context menu. It helps speed up users' learning and troubleshooting processes and provides a smoother workflow.
 
-**Example:**
+## How we built it
+- Chrome Extension Framework
+- React.js
+- Tailwind CSS
+- Gemini API
+- Chrome API
 
-While I was building {YOUR_PROJECT_NAME} I have learned the fundamentals of React and Redux. I learned what is the difference between React Context API and Redux, and what works best for my current application. I have used Reat hooks like useEffect, useState. It was my first project using TypeScript and I have learned a lot about TypeScript type definitions and fundamentals.
+## Challenges we ran into
+- Integration Hurdle with React
+- When using the React framework to build our Chrome extension, we discovered that the side panel, constructed with React, lacked access to the browser's contents—a crucial feature for our project. To address this challenge, we delved into the Chrome extension documentation and refactored our React files. We incorporated service-worker.js and content-scripts.js, successfully establishing a communication bridge between the side panel and the Chrome browser.
+- When developing the UI with tailwind, chrome extension development tool doesn't support live updates. We have to constantly write "npm run build" and re-upload the folder to test out our changes.
+- Multiple consoles to check out error messages (popup.js, sidepanel.js, servide-workers.js each has a console)
 
-# What issues have I faced and how I resolved them
+## Accomplishments that we're proud of
+- It's us first time building a Chrome Extension with React.JS! Our team was able navigate obsurness incompatibility issues between react and the chrome extension framework.
+- There was a lot of pervious examples that uses react to build the chrome extension for us to follow, we are proud that we tried to be optimistics despite limited resources to eventually finish the project.
 
-[Tell what was hard in the process of building the project. Tell about where have you feel stuck and how did you overcome this.]
+## What we learned
+- Build a Chrome Extension!
 
-**Example:**
-
-When I tried to connect to the third-party API, I was not sure how to use fetch and what is the difference between async/await, what are Promises and how to use them. After some Googling I found out the MDN documentation about async/await and tried to use it in practice - it worked! 
-
-# Source
-
-[Is this project was part of the course? Is it your own idea? Is it came from community?]
-
-**Example:**
-
-This project is done as part of the SheCodes course curriculum.
+## What's next for AskGenie
+- What sets our project apart is the vision for the next phase: we aim to empower users by summarizing their conversations into concise, user-friendly bullet points. This invaluable feature ensures that users can effortlessly revisit and reference their past interactions, eliminating the need to repeat questions. Our chatbox becomes a personalized knowledge repository, allowing users to build on their insights and experience a streamlined information retrieval process. It's not just about answering questions instantly; it's about creating a seamless and intelligent knowledge-sharing experience for the user, revolutionizing the way we navigate and learn in the digital landscape.
