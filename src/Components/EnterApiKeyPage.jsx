@@ -1,6 +1,10 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 function EnterApiKeyPage() {
   console.log("rendered API key page")
   const [apiKey, setApiKey] = useState('');
+  const navigate = useNavigate();
 
   const handleApiKeyChange = (event) => {
     setApiKey(event.target.value);
@@ -8,8 +12,8 @@ function EnterApiKeyPage() {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    // localStorage.setItem('apiKey', apiKey);
-    window.location.href = '/chatbot';
+    localStorage.setItem('apiKey', apiKey);
+    navigate('/chatbot');
   };
 
   return (
