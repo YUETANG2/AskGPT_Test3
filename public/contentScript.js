@@ -15,14 +15,13 @@
   document.addEventListener("selectionchange", debounce(async (event) => {
     //saved highlighted text from the broswer to selection
     selection = document.getSelection ? document.getSelection().toString() : document.selection.createRange().toString();
-    chrome.runtime.sendMessage({ text: selection });
     
-    // if (selection?.trim().length > 0) {
-    //   chrome.runtime.sendMessage({ text: selection });
-    // } else {
-    //   chrome.runtime.sendMessage({ text: " " });
-    // }
-    //check: print hightlighted text onto the broswer's console
+    if (selection?.trim().length > 0) {
+      chrome.runtime.sendMessage({ text: selection });
+    } else {
+      chrome.runtime.sendMessage({ text: " " });
+    }
+    // check: print hightlighted text onto the broswer's console
     console.log(selection)
   }, 250));
 
