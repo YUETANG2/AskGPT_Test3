@@ -8,10 +8,10 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" component={EnterApiKeyPage} />
+      <Route exact path="/" component={EnterApiKeyPage} />
       <Route path="/chatbot" component={ChatbotPage} />
       {/* Navigate to the */}
-      <Route path="*" element={<Navigate to="/enter-api-key" />} />
+      <Route path="*" element={<Navigate to="/" />} />
       {/* TODO: After we added the button on the Chatbot page to navigate back to the home page. We can automatically redirect the uer to the chatbot page if they inputted the apikey*/}
       {/* <Route path="/" element={apiKey ? <Navigate to="/chatbot" /> : <Navigate to="/enter-api-key" />} /> */}
     </Routes>

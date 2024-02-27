@@ -1,5 +1,3 @@
-
-
 function EnterApiKeyPage() {
   console.log("rendered API key page")
   const [apiKey, setApiKey] = useState('');
