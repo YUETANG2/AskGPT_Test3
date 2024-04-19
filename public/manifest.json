@@ -3,11 +3,7 @@
   "description": "Base Level Extension",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions" : [
-    "contextMenus",
-    "sidePanel",
-    "activeTab"
-  ],
+  "permissions": ["contextMenus", "sidePanel", "activeTab", "storage"],
   "background": {
     "service_worker": "background.js",
     "type": "module"
