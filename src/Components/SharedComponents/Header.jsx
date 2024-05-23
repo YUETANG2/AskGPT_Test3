@@ -1,4 +1,4 @@
-function Header() {
+function Header(props) {
   return (
     <div class=" bg-zinc-400 ">
       <div class="grid gap-0 grid-cols-4 grid-rows-1 px-8 py-6  bg-zinc-700">
