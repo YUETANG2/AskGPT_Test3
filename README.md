@@ -1,5 +1,12 @@
 # Ask Genie
 
+# Next steps for AskGenie
+- Upgrade UI to dark mode
+- Switch to the conversation based Gemini model 
+- Conversation summarization 
+- Folder organization 
+
+
 # Installation
 - Clone repo to your machine
 - `npm i`
