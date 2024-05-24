@@ -3,8 +3,6 @@
 # Installation
 - Clone repo to your machine
 - `npm i`
-- [Make a .env file]
-- [Place your ChatGPT API key in the .env folder]
 - `npm run build`
 - Go to chrome extension in your browser
 - Click on "Manage Extension"
