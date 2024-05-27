@@ -1,12 +1,5 @@
 # Ask Genie
 
-# Next steps for AskGenie
-- Upgrade UI to dark mode
-- Switch to the conversation based Gemini model 
-- Conversation summarization 
-- Folder organization 
-
-
 # Installation
 - Clone repo to your machine
 - `npm i`
@@ -43,3 +36,10 @@ What it does is allow users to open our AI-powered chat box (a side panel) throu
 
 ## What's next for AskGenie
 - What sets our project apart is the vision for the next phase: we aim to empower users by summarizing their conversations into concise, user-friendly bullet points. This invaluable feature ensures that users can effortlessly revisit and reference their past interactions, eliminating the need to repeat questions. Our chatbox becomes a personalized knowledge repository, allowing users to build on their insights and experience a streamlined information retrieval process. It's not just about answering questions instantly; it's about creating a seamless and intelligent knowledge-sharing experience for the user, revolutionizing the way we navigate and learn in the digital landscape.
+
+# Next steps for AskGenie 
+- Upgrade UI to dark mode
+- Switch to the conversation based Gemini model 
+- Conversation summarization 
+- Folder organization 
+
